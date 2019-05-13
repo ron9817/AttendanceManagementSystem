@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>Proxy</title>
+        <style>
+            body{
+                background:rgb(25,25,25);
+            }
+
+            option{
+                color:red;
+                font-size:25px;
+            }
+            label{
+                color:yellow;
+                border: solid 1px red;
+                font-size:25px;
+                padding:5px;
+                width 50px;
+                height:50px;
+                margin:5px;
+            }
+            select{
+                background: yellow;
+                padding 5px;
+                width 50px;
+                color: red;
+                height:50px;
+                font-size:25px;
+                border:solid 2px red;
+                border-radius:2px;
+                margin:5px;
+
+            }
+            button{
+                background: yellow;
+                padding 5px;
+                width 100px;
+                color: red;
+                height:100px;
+                font-size:25px;
+                border:solid 5px red;
+                border-radius:5px;
+                margin:10px;
+            }
+            tr{
+                width:500px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <form action='#' method="POST">
+            <table>
+                <tr>
+                    <td>
+                        <label for="1">
+                            Actual Lecture:
+                        </label>
+                    </td>
+                    <td>
+                        <!--<input type="text" id="1" name="actual">-->
+                        <select name="actual" id="1">
+                            <option value="BCE">BCE</option>
+                            <option value="INTP">INTP</option>
+                            <option value="CNS">CNS</option>
+                            <option value="ADSAA">ADSAA</option>
+                            <option value="ADBMS">ADBMS</option>
+                            <option value="OLAPL">OLAPL</option>
+                            <option value="MEP">MEP</option>
+                            <option value="IOTL">IOTL</option>
+                            <option value="INTPL">INTPL</option>
+                            <option value="SECURITYL">SECURITYL</option>
+                            <option value="BCEL">BCEL</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="2">
+                            Proxy Lecture:
+                        </label>
+                    </td>
+                    <td>
+                        <!--<input type="text" id="2" name="proxy">-->
+                        <select name="proxy" id="2">
+                            <option value="BCE">BCE</option>
+                            <option value="INTP">INTP</option>
+                            <option value="CNS">CNS</option>
+                            <option value="ADSAA">ADSAA</option>
+                            <option value="ADBMS">ADBMS</option>
+                            <option value="OLAPL">OLAPL</option>
+                            <option value="MEP">MEP</option>
+                            <option value="IOTL">IOTL</option>
+                            <option value="INTPL">INTPL</option>
+                            <option value="SECURITYL">SECURITYL</option>
+                            <option value="BCEL">BCEL</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button name="form1">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

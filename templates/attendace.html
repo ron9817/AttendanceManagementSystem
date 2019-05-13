@@ -1,0 +1,292 @@
+<html>
+    <head>
+        <title>
+            Attendance
+        </title>
+        <style>
+            body{
+                background:rgb(25,25,25);
+            }
+            #lec11, #lec21, #lec31, #lec41, #lec51, #lec12, #lec22, #lec32, #lec42, #lec52, #lec13, #lec23, #lec33, #lec43, #lec53, #lec14, #lec24, #lec34, #lec44, #lec54, #lec15, #lec25, #lec35, #lec45, #lec55, #lec16, #lec26, #lec36, #lec46, #lec56, #lec17, #lec27, #lec37, #lec47, #lec57{
+                display: none;
+            }
+            #lec111, #lec211, #lec311, #lec411, #lec511, #lec121, #lec221, #lec321, #lec421, #lec521, #lec131, #lec231, #lec331, #lec431, #lec531, #lec141, #lec241, #lec341, #lec441, #lec541, #lec151, #lec251, #lec351, #lec451, #lec551, #lec161, #lec261, #lec361, #lec461, #lec561, #lec171, #lec271, #lec371, #lec471, #lec571{
+                display: none;
+            }
+            input {
+                background: red;
+                padding 5px;
+                width 10px;
+                color: yellow;
+                height:10px;
+                font-size:25px;
+                border:solid 5px red;
+                border-radius:5px;
+                margin:25px;
+
+            }
+            option{
+                color:red;
+                font-size:25px;
+            }
+            h1{
+                text-align:center;
+                color: red;
+                text-decoration: underline;
+            }
+            label{
+                color:yellow;
+                border: solid 1px red;
+                font-size:25px;
+                padding:5px;
+                width 50px;
+                height:50px;
+                margin:25px;
+            }
+            select{
+                background: yellow;
+                padding 5px;
+                width 50px;
+                color: red;
+                height:50px;
+                font-size:25px;
+                border:solid 2px red;
+                border-radius:2px;
+                margin:5px;
+
+            }
+            button{
+                background: yellow;
+                padding 5px;
+                width 100px;
+                color: red;
+                height:100px;
+                font-size:25px;
+                border:solid 5px red;
+                border-radius:5px;
+                margin:10px;
+            }
+            tr{
+                width:500px;
+            }
+
+        </style>
+        <script>
+            //document.getElementById("panel").style.display = "block";
+            function reset(){
+                //document.getElementById("lec11").style.display = "none";
+                //document.getElementById("lec111").style.display = "none";
+                document.getElementById("lec31").style.display = "none";
+                document.getElementById("lec311").style.display = "none";
+                document.getElementById("lec51").style.display = "none";
+                document.getElementById("lec511").style.display = "none";
+                for(i=1;i<=5;i++){
+                    for(j=2;j<=7;j++){
+                        var str="lec"+i+j;
+                        document.getElementById(str).style.display = "none";
+                        document.getElementById(str+"1").style.display = "none";
+                    }
+                }
+            }
+            function update(){
+                var x=document.getElementById("day_").value;
+                if(x=="Mon"){
+                    reset();
+                    for(i=2;i<=7;i++){
+                        var str="lec1"+i;
+                        document.getElementById(str).style.display = "inline";
+                        document.getElementById(str+'1').style.display = "inline";
+                    }
+                }else if(x=="Tue"){
+                    reset();
+                    for(i=2;i<=7;i++){
+                        var str="lec2"+i;
+                        document.getElementById(str).style.display = "inline";
+                        document.getElementById(str+'1').style.display = "inline";
+                    }
+                }else if(x=="Wed"){
+                    reset();
+                    for(i=1;i<=7;i++){
+                        var str="lec3"+i;
+                        document.getElementById(str).style.display = "inline";
+                        document.getElementById(str+'1').style.display = "inline";
+                    }
+                }else if(x=="Thu"){
+                    reset();
+                    for(i=2;i<=7;i++){
+                        var str="lec4"+i;
+                        document.getElementById(str).style.display = "inline";
+                        document.getElementById(str+'1').style.display = "inline";
+                    }
+                }else if(x=="Fri"){
+                    reset();
+                    for(i=1;i<=7;i++){
+                        var str="lec5"+i;
+                        document.getElementById(str).style.display = "inline";
+                        document.getElementById(str+'1').style.display = "inline";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>TIME TABLE</h1>
+        <form id="f1" name="form1" action="/Ronak@9821/result" method="POST">
+            <table>
+                <tr>
+                    <td>
+                        <label for="day_">
+                            Select Day
+                        </label>
+                    </td>
+                    <td colspan="4">
+                        <select name="day" id="day_" onchange="update();">
+                            <option value="-">
+                                --------
+                            </option>
+                            <option value="Mon">
+                                Monday
+                            </option>
+                            <option value="Tue">
+                                Tuesday
+                            </option>
+                            <option value="Wed">
+                                Wednesday
+                            </option>
+                            <option value="Thu">
+                                Thursday
+                            </option>
+                            <option value="Fri">
+                                Friday
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!--<input type="checkbox" id="lec11" name="lec11" value="BCE"> <label for="lec11" id="lec111">BCE</label>-->
+                    </td>
+                    <td>
+                        <!--<input type="checkbox" id="lec21" name="lec21" value="Bike"> <label for="lec21" id="lec211">I have a bike</label>-->
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec31" name="lec31" value="INTP"> <label for="lec31" id="lec311">INTP</label>
+                    </td>
+                    <td>
+                        <!--<input type="checkbox" id="lec41" name="lec41" value="Bike"> <label for="lec41" id="lec411">I have a bike</label>-->
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec51" name="lec51" value="CNS"> <label for="lec51" id="lec511">CNS</label>-->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="lec12" name="lec12" value="CNS"> <label for="lec12" id="lec121">CNS</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec22" name="lec22" value="ADSAA"> <label for="lec22" id="lec221">ADSAA</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec32" name="lec32" value="ADBMS"> <label for="lec32" id="lec321">ADBMS</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec42" name="lec42" value="OLAPL"> <label for="lec42" id="lec421">OLAP LAB</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec52" name="lec52" value="MEP"> <label for="lec52" id="lec521">MEP</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="lec13" name="lec13" value="ADBMS"> <label for="lec13" id="lec131">ADBMS</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec23" name="lec23" value="CNS"> <label for="lec23" id="lec231">CNS</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec33" name="lec33" value="MEP"> <label for="lec33" id="lec331">MEP</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec43" name="lec43" value="OLAPL"> <label for="lec43" id="lec431">OLAP LAB</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec53" name="lec53" value="INTP"> <label for="lec53" id="lec531">INTP</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="lec14" name="lec14" value="MEP"> <label for="lec14" id="lec141">MEP</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec24" name="lec24" value="IOTL"> <label for="lec24" id="lec241">IOT Lab</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec34" name="lec34" value="BCE"> <label for="lec34" id="lec341">BCE</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec44" name="lec44" value="MEP"> <label for="lec44" id="lec441">MEP</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec54" name="lec54" value="BCE"> <label for="lec54" id="lec541">BCE</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="lec15" name="lec15" value="ADSAA"> <label for="lec15" id="lec151">ADSAA</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec25" name="lec25" value="IOTL"> <label for="lec25" id="lec251">IOT LAB</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec35" name="lec35" value="ADSAA"> <label for="lec35" id="lec351">ADSAA</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec45" name="lec45" value="CNS"> <label for="lec45" id="lec451">CNS</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec55" name="lec55" value="ADBMS"> <label for="lec55" id="lec551">ADBMS</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="lec16" name="lec16" value="INTPL"> <label for="lec16" id="lec161">INTP LAB</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec26" name="lec26" value="INTP"> <label for="lec26" id="lec261">INTP</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec36" name="lec36" value="SECURITYL"> <label for="lec36" id="lec361">SECURITY LAB</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec46" name="lec46" value="INTP"> <label for="lec46" id="lec461">INTP</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec56" name="lec56" value="BCEL"> <label for="lec56" id="lec561">BCE LAB</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="lec17" name="lec17" value="INTPL"> <label for="lec17" id="lec171">INTP LAB</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec27" name="lec27" value="ADBMS"> <label for="lec27" id="lec271">ADBMS</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec37" name="lec37" value="SECURITYL"> <label for="lec37" id="lec371">SECURITY LAB</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec47" name="lec47" value="ADSAA"> <label for="lec47" id="lec471">ADSAA</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" id="lec57" name="lec57" value="BCEL"> <label for="lec57" id="lec571">BCE LAB</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit">SUBMIT</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

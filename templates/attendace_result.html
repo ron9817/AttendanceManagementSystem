@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>
+            Attendance
+        </title>
+        <style>
+        body{
+            background: rgb(10,10,10);
+        }
+        h1{
+            color:red;
+            text-decoration:underline
+        }
+        td{
+            color: red;
+            border:solid yellow 1px;
+            border-radius:5px;
+            margin:5px;
+            padding:5px;
+            font-size:20px;
+        }
+        </style>
+    </head>
+    <body>
+
+
+        <h1>Hey Buddy Your Attendace is:</h1>
+        <table>
+        {%for i in details%}
+        <tr>
+        <td>{{i}}:</td><td>{{details[i]}}</td>
+        </tr>
+        {%endfor%}
+        </table>
+
+</body>
+</html>
